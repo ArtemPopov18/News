@@ -1,6 +1,6 @@
 package com.example.news.di
 
-import com.example.news.data.NewsService
+import com.example.news.data.api.NewsService
 import com.example.news.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
