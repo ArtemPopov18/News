@@ -63,7 +63,7 @@ class SearchFragment : Fragment() {
                 is Resource.Error -> {
                     binding.pagSearchProgressBar.visibility = View.INVISIBLE
                     responce.data?.let {
-                        Log.e("checkData", "MainFragment: error $it")
+                        Log.e("checkData", "SearchFragment: error $it")
                     }
                 }
                 is Resource.Loading -> {
