@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.webkit.URLUtil
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.news.databinding.FragmentDetailsBinding
@@ -21,6 +22,7 @@ class DetailsFragment : Fragment() {
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
     private val bundleArgs: DetailsFragmentArgs by navArgs()
+    private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +64,10 @@ class DetailsFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     )
                 }
+            }
+
+            binding.iconFavorite.setOnClickListener {
+                viewModel.saveFavoriteArticle(article)
             }
         }
     }
